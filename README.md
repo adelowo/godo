@@ -6,6 +6,7 @@
 
 Godo is a plugin that allows you navigate  through the todo messages in your Go project.
 
+![Godo in action](https://github.com/adelowo/godo/blob/master/doc/screenshot.png)
 It makes use of `astitodo` underneath.
 
 ##  Feature
