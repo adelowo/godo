@@ -1,5 +1,7 @@
 ## Godo - Browse todos in your Go source code
 
+> WIP
+
 ## Introduction
 
 Godo is a plugin that allows you navigate  through the todo messages in your Go project.
@@ -20,7 +22,7 @@ I recommend you use [Vim-Plug](https://github.com/junegunn/vim-plug/blob/master/
 With Vim-Plug installed, put the following lines in your vimrc:
 
 ```vim
-Plug 'adelowo/godot'
+Plug 'adelowo/godo'
 ```
 
 Then execute `:PlugInstall` in command mode.
