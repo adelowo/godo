@@ -116,4 +116,3 @@ function! Godo()
 	
 endfunction
 
-nnoremap <Leader>. :call Godo()<CR>
