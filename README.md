@@ -16,17 +16,16 @@ It makes use of `astitodo` underneath.
 
 <div id="features"> </div>
 
-##  Feature
+##  Features
  - [x] Fast browsing of todos.
  - [ ] Todos
-	- [x] View all todos in a specific file.
-	- [ ] View todos in a file sorted by assignees.
+	- [x] View all todos in a specific file with `:Godo`.
+	- [ ] View todos in a file sorted by assignees with `:Godo assignee_name` (e.g `:Godo adelowo` .)
 	- [ ] Find all todos in the current folder opened.
- - [x] Show a nice warning message if there aren't any todo in the file.
- - [ ] Navigate to the source code line housing the todo message.
+	- [ ] Navigate to the source code line housing the todo message.
+	- [x] Show a nice warning message if there aren't any todo in the file.
  - [x] Install `astitodo` binary by running `:GodoInstallBinary`.
  - [ ] Update `astitodo` binary by running `:GodoUpdateBinary`.
-
 
 <div id="usage"> </div>
 
@@ -42,7 +41,7 @@ Plug 'adelowo/godo', { 'do': ':GodoInstallBinary' }
 
 Then execute `:PlugInstall` in command mode.
 
-> `GodoInstallBinary` would fetch the astitodo binary used for matching/finding todos.
+> `GodoInstallBinary` would fetch the astitodo library used for matching/finding todos.
 
 #### Configuration
 
@@ -53,7 +52,7 @@ Then execute `:PlugInstall` in command mode.
 let g:go_get_update = 1 " Make use of the -u flag when installing the astitodo library.
 let g:godo_install_verbose = 1 " Make use of the -v flag when installing the astitodo library..
 
-" Refer to the official godoc for `go get` to understand what this flags stand for
+" The flags above are passed to `go get`. You would want to refer to the official godoc for `go get` to understand what this flags stand for
 
 ```
 > `g:go_get_update` is actually the same config defined by [`vim-go`](https://github.com/fatih/vim-go). If it doesn't exist, it is set to 0 anyways.
@@ -62,7 +61,7 @@ let g:godo_install_verbose = 1 " Make use of the -v flag when installing the ast
 
 > godo doesn't come with key mapping defaults..
 
-To view todos in a file, open the file buffer and `call Godo()` in command mode.. To map this to a key, you add this to your `init.vim` (`.vimrc`).
+To view todos in a file, open a file buffer and `:Godo` in command mode.. To map this to a key, you add this to your `init.vim` (`.vimrc`).
 
 ```vim
 
