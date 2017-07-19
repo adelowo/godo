@@ -25,7 +25,7 @@ It makes use of `astitodo` underneath.
 	- [ ] Navigate to the source code line housing the todo message.
 	- [x] Show a nice warning message if there aren't any todo in the file.
  - [x] Install `astitodo` binary by running `:GodoInstallBinary`.
- - [ ] Update `astitodo` binary by running `:GodoUpdateBinary`.
+ - [x] Update `astitodo` binary by running `:GodoUpdateBinary`.
 
 <div id="usage"> </div>
 
