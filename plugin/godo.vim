@@ -2,6 +2,7 @@ command! GodoInstallBinary call s:GodoInstallBinary(-1)
 command! GodoUpdateBinary call s:GodoInstallBinary(1)
 
 let s:astitodo = "astitodo"
+let s:astitodo_repo = "github.com/asticode/go-astitodo"
 
 if !exists("g:godo_install_verbose")
 	let g:godo_install_verbose = 0
@@ -33,6 +34,8 @@ function! s:GodoInstallBinary(shouldUpdate)
 	if g:go_get_update == 1
 		let l:cmd .= " -u"
 	endif
+
+	let l:cmd .= " ". s:astitodo_repo
 
 	if !executable(s:astitodo) || a:shouldUpdate == 1
 		if a:shouldUpdate == 1
