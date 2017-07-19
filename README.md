@@ -66,7 +66,7 @@ To view todos in a file, open the file buffer and `call Godo()` in command mode.
 
 ```vim
 
-nnoremap <Leader>go :call Godo()<CR>
+nnoremap <Leader>. :call go#godo#Godo()<CR>
 ```
 
 #### License

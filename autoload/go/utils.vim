@@ -1,4 +1,3 @@
-
 " GoPath returns the $GOPATH currently set. If the user does not have a
 " $GOPATH, it makes use of the default $GOPATH which is available via `go env
 " GOPATH`.
@@ -12,3 +11,13 @@ function! go#utils#GoPath()
 	
 	return l:path
 endfunction
+
+" HasAstitodo checks if the astitodo binary exists
+function! go#utils#HasAstitodo() 
+	if executable('astitodo')
+		return 0
+	endif
+
+	return -1
+endfunction
+
