@@ -20,7 +20,7 @@ It makes use of `astitodo` underneath.
  - [x] Fast browsing of todos.
  - [ ] Todos
 	- [x] View all todos in a specific file with `:Godo`.
-	- [ ] View todos in a file sorted by assignees with `:Godo assignee_name` (e.g `:Godo adelowo` .)
+	- [x] View todos in a file sorted by assignees with `:Godo assignee_name` (e.g `:Godo adelowo` .)
 	- [ ] Find all todos in the current folder opened.
 	- [ ] Navigate to the source code line housing the todo message.
 	- [x] Show a nice warning message if there aren't any todo in the file.
@@ -65,7 +65,13 @@ To view todos in a file, open a file buffer and `:Godo` in command mode.. To map
 
 ```vim
 
-nnoremap <Leader>. :call go#godo#Godo()<CR>
+nmap <Leader>. :Godo<CR>
+```
+
+To filter todos in a file by assignees, you make use of `:Godo assignee_name`.
+
+```vim
+:Godo adelowo " Would show all todos assigned to adelowo
 ```
 
 #### License

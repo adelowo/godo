@@ -1,2 +1,2 @@
-command! -nargs=0 Godo call go#godo#Godo()
+command! -nargs=? Godo call go#godo#Godo(<f-args>)
 
