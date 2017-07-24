@@ -1,27 +1,28 @@
 function! go#godo#Godo(...)
 
-	let l:assignee = ""
+	let l:assignees = ""
 	let s:valid_ext = "go"
 	let err = go#utils#HasAstitodo()
-
-	if a:0 == 1 && !empty(a:1)
-		" Pick out the first args alone and see if todos need to be
-		" filtered by an assignee
-		" TODO(adelowo) Support multiple assignees ? :Godo a1 a2 a3 ?
-		let l:assignee = a:1
-	endif
 
 	if err != 0 
 		echohl Error | echomsg "Please install the astitodo library by running :GodoInstallBinary" | echohl None
 		return -1
 	endif
 
+	if a:0 > 0
+		let l:idx = 0
+		while l:idx < a:0
+			let l:assignees = l:assignees . "," . a:000[idx]
+			let l:idx = l:idx + 1
+		endwhile
+	endif
+
 	if expand('%:e') ==# s:valid_ext
 
 		let l:cmd = "astitodo"
 
-		if !empty(l:assignee)
-			let l:cmd .= " -a=".l:assignee.""
+		if !empty(l:assignees)
+			let l:cmd .= " -a=".l:assignees.""
 		endif
 
 		let l:cmd .= " " . expand("%")
@@ -33,8 +34,8 @@ function! go#godo#Godo(...)
 
 			" Properly format error messages for todo searches
 			" with an assignee
-			if !empty(l:assignee)
-				let l:message .= " assigned to " . l:assignee
+			if !empty(l:assignees)
+				let l:message .= " assigned to " . l:assignees
 			endif
 
 			echohl WarningMessage | echo l:message | echohl None

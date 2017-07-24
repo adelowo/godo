@@ -21,6 +21,7 @@ It makes use of `astitodo` underneath.
  - [ ] Todos
 	- [x] View all todos in a specific file with `:Godo`.
 	- [x] View todos in a file sorted by assignees with `:Godo assignee_name` (e.g `:Godo adelowo` .)
+	- [x] View todos sorted by multiple assignees with `:Godo assignee_name1 assignee_name2`
 	- [ ] Find all todos in the current folder opened.
 	- [ ] Navigate to the source code line housing the todo message.
 	- [x] Show a nice warning message if there aren't any todo in the file.
@@ -72,6 +73,8 @@ To filter todos in a file by assignees, you make use of `:Godo assignee_name`.
 
 ```vim
 :Godo adelowo " Would show all todos assigned to adelowo
+
+:Godo adelowo lanre username " Would show all todos assigned to the specificied usernames
 ```
 
 #### License
