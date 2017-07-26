@@ -8,12 +8,12 @@ function! go#utils#GoPath()
 	if strlen(l:path) == 0
 		return system("go env GOPATH")
 	endif
-	
+
 	return l:path
 endfunction
 
 " HasAstitodo checks if the astitodo binary exists
-function! go#utils#HasAstitodo() 
+function! go#utils#HasAstitodo()
 	if executable('astitodo')
 		return 0
 	endif

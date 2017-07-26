@@ -4,7 +4,7 @@ function! go#godo#Godo(...)
 	let s:valid_ext = "go"
 	let err = go#utils#HasAstitodo()
 
-	if err != 0 
+	if err != 0
 		echohl Error | echomsg "Please install the astitodo library by running :GodoInstallBinary" | echohl None
 		return -1
 	endif
@@ -59,6 +59,6 @@ function! go#godo#Godo(...)
 		echohl Error | echo "Godo works only with source code for the Go programming language. Open up a file and check this out" | echohl None
 		return -1
 	endif
-	
+
 endfunction
 

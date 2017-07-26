@@ -39,7 +39,7 @@ function! s:GodoInstallBinary(shouldUpdate)
 
 	if !executable(s:astitodo) || a:shouldUpdate == 1
 		if a:shouldUpdate == 1
-			echo printf("godo : Updating %s", s:astitodo) 
+			echo printf("godo : Updating %s", s:astitodo)
 		else
 			echo printf("godo : Installing %s", s:astitodo)
 		endif
