@@ -14,10 +14,6 @@ endfunction
 
 " HasAstitodo checks if the astitodo binary exists
 function! go#utils#HasAstitodo()
-	if executable('astitodo')
-		return 0
-	endif
-
-	return -1
+	return executable('astitodo')
 endfunction
 
