@@ -40,18 +40,40 @@ function! go#godo#Godo(...)
 			return 0
 		endif
 
-		botright new
-		setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-		set nonumber
-
-		let l:line_count = 0
+		let todos = []
+		let l:fileName = ""
+		let l:lNum = 0
+		let l:Text = ""
 
 		for line in split(l:out, '\n')
-			let l:line_count = l:line_count + 1
-			call setline(l:line_count, line)
+			let tokens = matchlist(line, '^\(\w\+\): \s*\(.*\)\|^\(.\{-}\):\(\d\+\)')
+			if !empty(tokens)
+				if len(tokens[3]) > 0 && len(tokens[4]) > 0
+					let l:fileName = strpart(tokens[3], 5)
+					let l:lNum = tokens[4]
+				endif
+
+				if tokens[1] == "Message"
+					let l:Text = tokens[2]
+				endif
+
+				if !empty(l:fileName) && !empty(l:Text) && !empty(l:lNum)
+					call add(todos, {
+							\"filename": l:fileName,
+							\"lnum": l:lNum,
+							\"text": l:Text,
+							\	})
+					" Reset
+					let l:fileName = ""
+					let l:Text = ""
+					let l:lNum = 0
+				endif
+			endif
 		endfor
 
-		setlocal nomodifiable
+		call setqflist(todos, 'r', "Todos found in this file")
+		:copen
+
 		return 0
 	else
 		echohl Error | echo "Godo works only with source code for the Go programming language. Open up a file and check this out" | echohl None
