@@ -23,7 +23,7 @@ It makes use of `astitodo` underneath.
 	- [x] View todos in a file sorted by assignees with `:Godo assignee_name` (e.g `:Godo adelowo` .)
 	- [x] View todos sorted by multiple assignees with `:Godo assignee_name1 assignee_name2`
 	- [ ] Find all todos in the current folder opened.
-	- [ ] Navigate to the source code line housing the todo message.
+	- [x] Navigate to the source code line housing the todo message.
 	- [x] Show a nice warning message if there aren't any todo in the file.
  - [x] Install `astitodo` binary by running `:GodoInstallBinary`.
  - [x] Update `astitodo` binary by running `:GodoUpdateBinary`.
